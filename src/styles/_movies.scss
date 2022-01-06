@@ -18,7 +18,7 @@
 
 .movie-card {
     background-color: rgba(black, 0.3);
-    border: em(3) solid $textColor;
+    border: em(3) solid rgb(207, 197, 197);
     padding: em(10);
     margin-bottom: em(16);
     border-radius: em(8);
@@ -28,7 +28,27 @@
         border-radius: em(4);
     }
 
+    h3 {
+        text-align: center;
+    }
+    
+    a {
+        color: white;
+    }
+
     @include mq($tablet){
         margin-bottom: 0;
+    }
+}
+
+.movie-poster {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+
+    img {
+        text-align: center;
+        border: 5px solid white;
+        border-radius: $radius;
     }
 }

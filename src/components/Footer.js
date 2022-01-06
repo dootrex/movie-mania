@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <footer>
-            <p>&copy; 2021 Michael Whyte</p>
+            <p>&copy; 2021 Avi, Adrian, Ross</p>
         </footer>
     )
 }

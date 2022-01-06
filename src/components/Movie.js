@@ -2,16 +2,24 @@ import React from "react";
 import noPoster from "../images/no-movie-poster.jpg";
 import Heart from "react-heart";
 import { useState } from "react";
+import { useEffect } from "react";
 
 export default function Movie({ movie }) {
   //look at the console for the info we can display
-  console.log(movie);
   const [liked, setLiked] = useState(false);
-  //later this state will not be set to false as default but will be checked from local storage with movie id
+
+  useEffect(() => {
+    const checkLiked = async () => {
+      localStorage.getItem(`${movie?.id}`) ? setLiked(true) : setLiked(false);
+    };
+    checkLiked();
+  }, [movie]);
 
   const handleLike = () => {
     setLiked(!liked);
-    //local Storage setting up for specific movie will go here by using movie id.
+    liked
+      ? localStorage.removeItem(`${movie.id}`)
+      : localStorage.setItem(`${movie.id}`, JSON.stringify(movie));
   };
 
   return (
@@ -35,7 +43,7 @@ export default function Movie({ movie }) {
               <Heart isActive={liked} onClick={handleLike} />
             </div>
 
-            <p>Revenue: {movie.revenue}</p>
+            <p>Revenue: ${movie.revenue}</p>
             <p>Rating: {movie.vote_average}</p>
             <p>Runtime: {movie.runtime}</p>
             <p>{movie.overview}</p>
