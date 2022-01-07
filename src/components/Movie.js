@@ -1,11 +1,9 @@
 import React from "react";
 import noPoster from "../images/no-movie-poster.jpg";
 import Heart from "react-heart";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function Movie({ movie }) {
-  //look at the console for the info we can display
   const [liked, setLiked] = useState(false);
 
   useEffect(() => {
@@ -42,8 +40,7 @@ export default function Movie({ movie }) {
             <div style={{ width: "2rem" }}>
               <Heart isActive={liked} onClick={handleLike} />
             </div>
-
-            <p>Revenue: ${movie.revenue}</p>
+            <p>Revenue: {movie.revenue}</p>
             <p>Rating: {movie.vote_average}</p>
             <p>Runtime: {movie.runtime}</p>
             <p>{movie.overview}</p>
