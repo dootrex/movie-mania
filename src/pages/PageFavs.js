@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react/cjs/react.development";
-import Search from "../components/Search";
-import Movies from "../components/Movies";
+import Search from "../components/Search.js";
+import Movies from "../components/Movies.js";
 
 function PageFavs() {
   const [moviesData, setMoviesData] = useState(null);
