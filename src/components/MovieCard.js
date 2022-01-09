@@ -21,7 +21,7 @@ function MovieCard({ movie }) {
       : localStorage.setItem(`${movie.id}`, JSON.stringify(movie));
 
     window.location.pathname ===
-      "https://dootrex.github.io/movie-mania#/movie-mania/favs" &&
+      "https://dootrex.github.io/movie-mania/#/movie-mania/favs" &&
       window.location.reaload();
   };
   return (
