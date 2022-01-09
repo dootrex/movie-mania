@@ -15,14 +15,15 @@ function MovieCard({ movie }) {
 
   const handleLike = () => {
     console.log(window.location.href);
+    console.log(window.location.pathname);
     setLiked(!liked);
     liked
       ? localStorage.removeItem(`${movie.id}`)
       : localStorage.setItem(`${movie.id}`, JSON.stringify(movie));
 
-    window.location.href ===
-      "https://dootrex.github.io/movie-mania/#/movie-mania/favs" &&
-      window.location.reload();
+    // window.location.href ===
+    //   "https://dootrex.github.io/movie-mania/#/movie-mania/favs" &&
+    window.location.reload();
   };
   return (
     <div className="movie-card">
