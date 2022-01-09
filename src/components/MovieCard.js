@@ -20,7 +20,7 @@ function MovieCard({ movie }) {
       ? localStorage.removeItem(`${movie.id}`)
       : localStorage.setItem(`${movie.id}`, JSON.stringify(movie));
 
-    window.location.pathname ===
+    window.location.href ===
       "https://dootrex.github.io/movie-mania/#/movie-mania/favs" &&
       window.location.reaload();
   };
