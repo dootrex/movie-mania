@@ -22,7 +22,7 @@ function MovieCard({ movie }) {
 
     window.location.href ===
       "https://dootrex.github.io/movie-mania/#/movie-mania/favs" &&
-      window.location.reaload();
+      window.location.reload();
   };
   return (
     <div className="movie-card">
