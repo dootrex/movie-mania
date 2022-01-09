@@ -15,7 +15,7 @@ function PageFavourites() {
   };
   useEffect(() => {
     fetchMovies();
-  });
+  }, []);
   return (
     <section className="favs-page">
       <Search />
