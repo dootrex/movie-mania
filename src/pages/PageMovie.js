@@ -26,7 +26,7 @@ export default function PageMovie() {
     };
 
     fetchMovies();
-  }, []);
+  });
 
   return (
     <>

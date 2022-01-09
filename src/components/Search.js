@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-const Search = () => {
+export default function Search() {
   const [value, setValue] = useState("");
   let history = useHistory();
   const handleChange = (e) => {
@@ -22,5 +22,4 @@ const Search = () => {
       </form>
     </div>
   );
-};
-export default Search;
+}

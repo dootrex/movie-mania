@@ -2,11 +2,9 @@ import { Link } from "react-router-dom";
 import noPoster from "../images/no-movie-poster.jpg";
 import Heart from "react-heart";
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 
 function MovieCard({ movie }) {
   const [liked, setLiked] = useState(false);
-  let history = useHistory();
 
   useEffect(() => {
     const checkLiked = async () => {
