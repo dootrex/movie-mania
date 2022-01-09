@@ -2,7 +2,7 @@ import { useState, useEffect } from "react/cjs/react.development";
 import Search from "../components/Search.js";
 import Movies from "../components/Movies.js";
 
-function PageFavs() {
+function PageFavourites() {
   const [moviesData, setMoviesData] = useState(null);
 
   const fetchMovies = () => {
@@ -24,4 +24,4 @@ function PageFavs() {
   );
 }
 
-export default PageFavs;
+export default PageFavourites;

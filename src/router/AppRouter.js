@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import PageHome from "../pages/PageHome";
 import PageAbout from "../pages/PageAbout";
-import PageFavs from "../pages/PageFavs";
+import PageFavourites from "../pages/PageFavourites";
 import PageSearch from "../pages/PageSearch";
 import { APP_FOLDER_NAME } from "../globals/globals";
 import PageMovie from "../pages/PageMovie";
@@ -34,7 +34,7 @@ function AppRouter() {
               <PageAbout />
             </Route>
             <Route path="/favs">
-              <PageFavs />
+              <PageFavourites />
             </Route>
             <Route path="/movie/:id">
               <PageMovie />
