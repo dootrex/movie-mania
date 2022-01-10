@@ -16,9 +16,22 @@ export default function Search() {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="search" id="search" onChange={handleChange} />
-        <button type="submit">Search</button>
+      <form onSubmit={handleSubmit} className="input-group p-4">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          onChange={handleChange}
+          className="form-control"
+          placeholder="Search for a Movie..."
+        />
+
+        <button
+          type="submit"
+          className="btn btn-outline-secondary btn-primary text-dark"
+        >
+          Search
+        </button>
       </form>
     </div>
   );

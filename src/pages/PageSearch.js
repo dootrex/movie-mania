@@ -29,7 +29,11 @@ export default function PageSearch() {
     <div>
       <section className="home-page">
         <Search />
-        {moviesData !== null && <Movies moviesData={moviesData} />}
+        {moviesData !== null && moviesData.length > 0 ? (
+          <Movies moviesData={moviesData} />
+        ) : (
+          <h3 className="p-5">Your search returned no results.</h3>
+        )}
       </section>
     </div>
   );

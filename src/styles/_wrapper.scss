@@ -1,14 +1,16 @@
 // Wrapper
 .wrapper {
-    max-width: em(1000);
-    margin: 0 auto;
-    
-    border-radius: 10px;
-    background-color: rgba(grey, 0.2);
+  max-width: em(1000);
+  min-width: "300px";
+  margin: 0 auto;
 
-    @include mq($desktopWide){
-        margin: em(8) auto;
-        border: 3px solid $textColor;
-    }
+  border-radius: 10px;
+  // background-color: rgba(grey, 0.2);
+  background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"),
+    #111111;
 
+  @include mq($desktopWide) {
+    margin: em(8) auto;
+    border: 3px solid $textColor;
+  }
 }

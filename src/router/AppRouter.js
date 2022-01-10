@@ -7,11 +7,12 @@ import PageFavourites from "../pages/PageFavourites";
 import PageSearch from "../pages/PageSearch";
 import { APP_FOLDER_NAME } from "../globals/globals";
 import PageMovie from "../pages/PageMovie";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function AppRouter() {
   return (
     <Router basename={APP_FOLDER_NAME}>
-      <div className="wrapper">
+      <div className="wrapper ">
         <Header />
         <main>
           <Switch>

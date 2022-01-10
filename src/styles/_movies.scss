@@ -1,54 +1,60 @@
 // Movies
 .movies-container {
-    padding: em(12);
+  padding: em(12);
 
-    @include mq($tablet){
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: em(14);
-    }
+  @include mq($tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: em(14);
+  }
 
-    @include mq($desktop){
-        padding: em(20);
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: em(18);
-    }
-
+  @include mq($desktop) {
+    padding: em(20);
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: em(18);
+  }
 }
 
 .movie-card {
-    background-color: rgba(black, 0.3);
-    border: em(3) solid rgb(207, 197, 197);
-    padding: em(10);
-    margin-bottom: em(16);
-    border-radius: em(8);
+  background-color: rgba(black, 0.3);
+  border: em(3) solid rgb(207, 197, 197);
+  padding: em(10);
+  margin-bottom: em(16);
+  border-radius: em(8);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
-    img {
-        width: 100%;
-        border-radius: em(4);
-    }
+  img {
+    width: 100%;
+    border-radius: em(4);
+  }
 
-    h3 {
-        text-align: center;
-    }
-    
-    a {
-        color: white;
-    }
+  h3 {
+    text-align: center;
+  }
 
-    @include mq($tablet){
-        margin-bottom: 0;
-    }
+  a {
+    color: white;
+  }
+
+  @include mq($tablet) {
+    margin-bottom: 0;
+  }
 }
 
 .movie-poster {
-    padding: 40px 0;
-    display: flex;
-    justify-content: center;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
 
-    img {
-        text-align: center;
-        border: 5px solid white;
-        border-radius: $radius;
-    }
+  img {
+    text-align: center;
+    border: 5px solid white;
+    border-radius: $radius;
+  }
+}
+.movie-info {
+  display: flex;
+  flex-direction: column;
 }

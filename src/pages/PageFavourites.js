@@ -51,10 +51,13 @@ class PageFavourites extends Component {
     return (
       <section className="favs-page">
         <Search />
-        {this.state.movies !== null ? (
+        {this.state.movies !== null && this.state.movies.length > 0 ? (
           <Movies moviesData={this.state.movies} />
         ) : (
-          <h1>No movies in Favouites.</h1>
+          <h3 className="p-4">
+            Sorry you have no favourited movies. Return to the home page to add
+            a favourite movie”
+          </h3>
         )}
       </section>
     );

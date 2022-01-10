@@ -14,6 +14,7 @@ export default function Movie({ movie }) {
   }, [movie]);
 
   const handleLike = () => {
+    console.log(movie);
     setLiked(!liked);
     liked
       ? localStorage.removeItem(`${movie.id}`)
@@ -23,7 +24,7 @@ export default function Movie({ movie }) {
   return (
     <>
       {movie ? (
-        <>
+        <div className="p-3">
           <div className="movie-poster">
             {movie.poster_path === null ? (
               <img src={noPoster} alt="No poster available." />
@@ -34,18 +35,27 @@ export default function Movie({ movie }) {
               />
             )}
           </div>
-          <div className="movie-info">
-            <h2>{movie.title}</h2>
-            <h3>{movie.tagline}</h3>
-            <div style={{ width: "2rem" }}>
-              <Heart isActive={liked} onClick={handleLike} />
+          <div className="d-flex movie-info flex-column">
+            <div className="d-flex flex-row justify-content-between">
+              <div>
+                <h1>{movie.title}</h1>
+                <h4>{movie.tagline}</h4>
+              </div>
+
+              <div className="ml-auto">
+                <Heart
+                  isActive={liked}
+                  onClick={handleLike}
+                  style={{ width: "35px" }}
+                />
+              </div>
             </div>
             <p>Revenue: {movie.revenue}</p>
             <p>Rating: {movie.vote_average}</p>
             <p>Runtime: {movie.runtime}</p>
             <p>{movie.overview}</p>
           </div>
-        </>
+        </div>
       ) : (
         <h1>waiting</h1>
       )}

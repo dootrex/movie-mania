@@ -14,8 +14,6 @@ function MovieCard({ movie }) {
   }, [movie]);
 
   const handleLike = () => {
-    console.log(window.location.href);
-    console.log(window.location.pathname);
     setLiked(!liked);
     liked
       ? localStorage.removeItem(`${movie.id}`)
@@ -27,23 +25,36 @@ function MovieCard({ movie }) {
   };
   return (
     <div className="movie-card">
-      <div className="movie-poster">
-        {movie.poster_path === null ? (
-          <img src={noPoster} alt="No poster available." />
-        ) : (
-          <img
-            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-            alt="Godzilla vs Kong"
-          />
-        )}
-      </div>
-      <div className="movie-info">
-        <h3>{movie.title}</h3>
-        <div style={{ width: "2rem" }}>
-          <Heart isActive={liked} onClick={handleLike} />
+      <Link to={`/movie/${movie.id}`}>
+        <div className="movie-poster">
+          {movie.poster_path === null ? (
+            <img src={noPoster} alt="No poster available." />
+          ) : (
+            <img
+              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+              alt="Godzilla vs Kong"
+            />
+          )}
         </div>
-        <Link to={`/movie/${movie.id}`}>More Info</Link>
+      </Link>
+
+      <div className="movie-info d-flex flex-row justify-content-between">
+        <div>
+          <Heart
+            isActive={liked}
+            onClick={handleLike}
+            style={{ width: "35px" }}
+          />
+        </div>
+        <div>
+          <Link to={`/movie/${movie.id}`}>
+            <h3>{movie.title}</h3>
+          </Link>
+        </div>
       </div>
+      <h4>{movie.tagline}</h4>
+      <p>Realease Date: {movie.release_date}</p>
+      <p>Movie Rating: {movie.vote_average}</p>
     </div>
   );
 }
