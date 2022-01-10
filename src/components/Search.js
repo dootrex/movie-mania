@@ -25,12 +25,11 @@ export default function Search() {
           className="form-control"
           placeholder="Search for a Movie..."
         />
-
         <button
           type="submit"
           className="btn btn-outline-secondary btn-primary text-dark"
         >
-          Search
+          <h4>Search</h4>
         </button>
       </form>
     </div>
